@@ -13,3 +13,6 @@
 
 
 Route::get('role',['middleware' => 'Role:editor','uses' => 'TestController@index']);
+
+Route::get('todo',['uses' => 'TodoController@index']);
+Route::get('insert',['uses' => 'TodoController@insert']);
