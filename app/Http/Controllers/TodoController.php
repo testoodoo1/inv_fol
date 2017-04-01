@@ -17,6 +17,11 @@ class TodoController extends Controller
 		$todo->text = $text;
 		$todo->status = 'pending';
 		$todo->save();
+    }
+
+    public function todo_list() {
+    	$data = Todo::all();
+    	return response()->json(['data' => $data]);
 
     }
 }

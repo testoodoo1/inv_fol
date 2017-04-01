@@ -14,15 +14,25 @@
 <ul id="myUL">
 
 </ul>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">
+<script src="js/jquery.min.js">
 
 </script>
 
 
 <script>
 // Create a "close" button and append it to each list item
-var myNodelist = document.getElementsByTagName("LI");
-alert(myNodelist);
+$.ajax({
+	type: 'GET',
+	url : 'list',
+	dataType : 'JSON',
+	sucess : function(data){
+		$.each(data, function(index, obj) {
+			alert(obj.id);
+		});
+	}
+})
+
+/*var myNodelist = document.getElementsByTagName("LI");
 var i;
 for (i = 0; i < myNodelist.length; i++) {
   var span = document.createElement("SPAN");
@@ -83,7 +93,7 @@ function newElement() {
       div.style.display = "none";
     }
   }
-}
+}*/
 </script>
 
 </body>
